@@ -10,7 +10,34 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <h1> Search Your Favorite Book</h1>
+    <!-- Seacrh Area starts here -->
+    <h3 class="text-center mt-5 fst-italic"> Search Your Favorite Book</h3>
+    <div class="input-group mb-3 w-50 mx-auto">
+        <input id="input-field" type="text" class="form-control" placeholder="Choose your book" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+        <button class="btn btn btn-success" type="button" id="button">Search</button>
+    </div>
+    <!-- Seacrh Area ends here -->
+
+
+    <!-- error handling starts here -->
+    <div id="error" class="text-center">
+        <h1>sorry i have no result</h1>
+    </div>
+    <!-- error handling ends here -->
+
+    <!-- total Search result -->
+    <div id="total-result">
+
+    </div>
+    <!-- total Search result -->
+
+    <!-- display everyItem starts here -->
+    <div id="display-book" class="row row-cols-1 row-cols-md-3 g-4">
+        
+    </div>
+    <!-- display everyItem ends here -->
+
 <!-- boostrap bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
