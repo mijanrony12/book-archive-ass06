@@ -39,7 +39,6 @@ const receiveInputValue = async bookName => {
 }
 //display data on HTML Page.
 const displayData = (book) => {
-    // console.log(book.length);
     if (book.length === 0)
     {
         error.style.display = 'block';
