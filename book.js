@@ -1,9 +1,14 @@
+// custom js code starts here.
+const displayBook = document.getElementById('display-book');
+const serachResult = document.getElementById('total-result');
 const error = document.getElementById('error');
 error.style.display = 'none';
+
 // handler add with button.
 document.getElementById('button').addEventListener('click', (e) => {
     e.preventDefault()
-
+    displayBook.textContent = '';
+    serachResult.textContent = '';
     //access input feild
     const inputField = document.getElementById('input-field');
     const inputValue = inputField.value;
@@ -34,26 +39,28 @@ const receiveInputValue = async bookName => {
 }
 //display data on HTML Page.
 const displayData = (book) => {
-    console.log(book.length);
+    // console.log(book.length);
     if (book.length === 0)
     {
         error.style.display = 'block';
-    } else if(book.length >=1)
+      
+    }
+    
+    else if (book.length >= 1)
     {
-        const displayBook = document.getElementById('display-book');
-    displayBook.textContent = '';
-    const serachResult = document.getElementById('total-result');
-    serachResult.textContent = '';
-    const searchDiv = document.createElement('div');
-    searchDiv.innerHTML = `
+        //image load on UI
+       const searchDiv = document.createElement('div');
+       searchDiv.innerHTML = `
          <h3 class="text-center">i have ${book.length} result</h3>
-    `;
-    serachResult.appendChild(searchDiv);
-    book.forEach( everyBook => {
-        const div = document.createElement('div');
-        div.innerHTML = `
-          <div class="col">
-            <div class="card">
+       `;
+        serachResult.appendChild(searchDiv);
+
+        // loop through in array
+       book.forEach( everyBook => {
+          const div = document.createElement('div');
+          div.innerHTML = `
+            <div class="col">
+              <div class="card">
                 <img height="300" src="https://covers.openlibrary.org/b/id/${everyBook.cover_i}-M.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">bookTitle:-${everyBook.title}</h5>
@@ -61,13 +68,13 @@ const displayData = (book) => {
                     <p class="card-text">publisher:-${everyBook.publisher}</p>
                     <p class="card-text">first_publish_year:-${everyBook.first_publish_year}</p>
                 </div>
-            </div>
-        </div>
-        `;
+              </div>
+          </div>
+         `;
         displayBook.appendChild(div);
-    });  
+       });  
     }
   
 }
 
-
+// custom js code ends here.
